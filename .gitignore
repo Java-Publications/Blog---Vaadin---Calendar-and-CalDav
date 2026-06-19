@@ -36,10 +36,15 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Vaadin frontend generated artefacts — pre-reactor + demo/ paths ###
 /src/main/frontend/generated/
 /src/main/bundles/
+/node_modules/
+demo/src/main/frontend/generated/
+demo/src/main/bundles/
+demo/node_modules/
 
 ### jSentinel persistence — Eclipse-Store data dir, bootstrap token ###
 /data/
-/node_modules/
 /Appl-iCloud-Password.txt
