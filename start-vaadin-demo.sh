@@ -20,7 +20,10 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-exec ./mvnw exec:java \
+# After Phase 2 of the calendar extraction the demo lives in the
+# `demo/` submodule, so the reactor build needs `-pl demo` to scope
+# exec:java to it. The class FQN itself is unchanged.
+exec ./mvnw -pl demo exec:java \
     -Dexec.classpathScope=test \
     -Dexec.mainClass=com.svenruppert.flow.CalDavDemo \
     "$@"
